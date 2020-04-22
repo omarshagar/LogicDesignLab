@@ -18,16 +18,22 @@ public  abstract class InputComponent implements Component {
     private Image image;
     private Pin Mpin;
     protected java.awt.image.BufferedImage img ;
+    private String allPath;
     String basePath ;
         
     public InputComponent(){
         this.basePath  = new File("").getAbsolutePath();
+        allPath=this.basePath+"/src/InputComponentImage/";
     }
     /**
      * @return the value
      */
     public boolean isValue() {
         return value;
+    }
+
+    public String getAllPath() {
+        return allPath;
     }
 
     /**
