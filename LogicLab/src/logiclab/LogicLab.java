@@ -39,7 +39,7 @@ public class LogicLab {
         //declaring all buttons that appear on the main window  
         JButton yardBtn=new JButton("Yard");
         
-        DrawRect2 d;
+        
         
         
        
@@ -57,7 +57,7 @@ public class LogicLab {
             public void actionPerformed(ActionEvent e) {
              
               mainframe.dispose();
-                new Yard().setVisible(true);
+                new ColBradBoard().setVisible(true);
                
                 
              
@@ -78,33 +78,4 @@ public class LogicLab {
     
 }
 
-class DrawRect2 extends JPanel {
-   private  int RECT_X = 20;
-   private  int RECT_Y = RECT_X;
-   private  int RECT_WIDTH = 100;
-   private  int  RECT_HEIGHT = RECT_WIDTH;
-   
-   public DrawRect2(int x,int y,int width,int hight)
-   {
-       this.RECT_X=x;
-       this.RECT_Y=y;
-       this.RECT_HEIGHT=hight;
-       this.RECT_WIDTH=width;
-       repaint();
-   }
-  /* @Override
-   protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
-       paintframe(g);
-      
-   }*/
-   public void paint(Graphics g)
-   {
-        // draw the rectangle here
-        // g.setColor(Color.RED);
-       // g.fillRect(RECT_X,RECT_Y,RECT_WIDTH,RECT_HEIGHT);
-      //  g.setColor(Color.BLACK);
-        g.drawRect(RECT_X,RECT_Y,RECT_WIDTH,RECT_HEIGHT);
-        
-   }
-}
+
