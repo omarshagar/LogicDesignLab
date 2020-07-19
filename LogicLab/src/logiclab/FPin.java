@@ -8,7 +8,10 @@ package logiclab;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -21,7 +24,8 @@ public class FPin {
     //cur loc in panel
     private int rowLocInPanel;
     private int colLocInPanel;
-  public Rectangle rec;
+  public JPanel square;
+  public Color color=Color.RED;
     private BreadBoard parentBreadBoard;
 
     public FPin(int curRowInBB, int curColInBB, int rowLocInPanel, int colLocInPanel,BreadBoard parentBreadBoard) {
@@ -30,13 +34,21 @@ public class FPin {
         this.rowLocInPanel = rowLocInPanel;
         this.colLocInPanel = colLocInPanel;
         this.parentBreadBoard=parentBreadBoard;
-        rec=new Rectangle(this.rowLocInPanel,this.colLocInPanel,10,10);
         
+        
+        square =new JPanel();
+        square.setSize(10,10);
+        square.setBounds(rowLocInPanel, colLocInPanel, 10, 10);
+        // a test to react with pins 
+        square.addMouseListener(new fpinMouse(this.curRowInBB,this.curColInBB) {});
     }
 
-    public Rectangle getRec() {
-        return rec;
+    public JPanel getSquare() {
+          square.setBorder(new LineBorder(color, 3));
+        return square;
     }
+
+    
 
     public int getCurRowInBB() {
         return curRowInBB;
@@ -76,4 +88,20 @@ public class FPin {
         return parentBreadBoard;
     }
      
+}
+//this class found to react with class
+class fpinMouse extends MouseAdapter
+{
+    int curr;
+    int curc;
+    public fpinMouse(int r,int c)
+    {
+        this.curr=r;
+        this.curc=c;
+    }
+     @Override
+           public void mouseReleased(MouseEvent e) {
+               System.out.println(this.curr+" "+this.curc);
+        // do something
+         }
 }

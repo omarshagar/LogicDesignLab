@@ -11,11 +11,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.ScrollPane;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,17 +36,20 @@ public class Yard extends JFrame {
      * Creates new form Yard
      */
     BreadBoard mainBoard;
-    public Yard() {
-       
+    private int COLS;
+    public Yard(int cols) {
+        this.COLS=cols;
+       mainBoard=new BreadBoard(cols,30,this.MainFrame);
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        mainBoard=new BreadBoard(50,15);
-        this.rightPanel.setLayout(new GridLayout(1, 1));
-        this.rightPanel.add(mainBoard.draw());
-        
-        this.rightPanel.setVisible(true);
-   
+        mainBoard.drawPins(this);
+       /* FPin fb=new FPin(0, 0, 10, 10, mainBoard);
+        MainFrame.add(fb.square);*/
     }
+   public JPanel getMainFrame()
+   {
+       return this.MainFrame;
+   }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,6 +70,9 @@ public class Yard extends JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         rightPanel = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        MainFrame = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -89,15 +98,57 @@ public class Yard extends JFrame {
 
         jSplitPane2.setLeftComponent(leftPanel);
 
+        rightPanel.setAutoscrolls(true);
+
+        jScrollPane6.setMinimumSize(new java.awt.Dimension(9000, 9000));
+        jScrollPane6.setPreferredSize(new Dimension(mainBoard.getFrameWieght()+600,JFrame.MAXIMIZED_VERT));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new Dimension(mainBoard.getFrameWieght()+500,JFrame.MAXIMIZED_VERT));
+
+        MainFrame.setBackground(new java.awt.Color(255, 255, 255));
+        MainFrame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 6));
+        MainFrame.setForeground(new java.awt.Color(255, 255, 255));
+        MainFrame.setPreferredSize(new Dimension(mainBoard.getFrameWieght(),mainBoard.getFrameLength()));
+
+        javax.swing.GroupLayout MainFrameLayout = new javax.swing.GroupLayout(MainFrame);
+        MainFrame.setLayout(MainFrameLayout);
+        MainFrameLayout.setHorizontalGroup(
+            MainFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 88, Short.MAX_VALUE)
+        );
+        MainFrameLayout.setVerticalGroup(
+            MainFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 88, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(MainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19900, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(MainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(433, Short.MAX_VALUE))
+        );
+
+        jScrollPane6.setViewportView(jPanel1);
+
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 827, Short.MAX_VALUE)
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 665, Short.MAX_VALUE)
         );
 
         jSplitPane2.setRightComponent(rightPanel);
@@ -147,20 +198,25 @@ public class Yard extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                new Yard().setVisible(true);
+               // new Yard(this).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BreadFrame;
+    private javax.swing.JPanel BreadFrame1;
+    private javax.swing.JPanel MainFrame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel rightPanel;
