@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
  *
  * @author omarshagar
  */
-public class FPin {
+public class FPin extends Pin {
     //cur loc in bread board 
     private int curRowInBB;
     private int curColInBB;
@@ -26,28 +26,63 @@ public class FPin {
     private int colLocInPanel;
   public JPanel square;
   public Color color=Color.RED;
-    private BreadBoard parentBreadBoard;
+    private  BreadBoard parentBreadBoard;
+  private Yard yard;
+    
 
-    public FPin(int curRowInBB, int curColInBB, int rowLocInPanel, int colLocInPanel,BreadBoard parentBreadBoard) {
+    public FPin(int curRowInBB, int curColInBB, int rowLocInPanel, int colLocInPanel,BreadBoard parentBreadBoard,Yard yard) {
         this.curRowInBB = curRowInBB;
         this.curColInBB = curColInBB;
         this.rowLocInPanel = rowLocInPanel;
         this.colLocInPanel = colLocInPanel;
         this.parentBreadBoard=parentBreadBoard;
+        this.yard=yard;
         
         
         square =new JPanel();
         square.setSize(10,10);
         square.setBounds(rowLocInPanel, colLocInPanel, 10, 10);
         // a test to react with pins 
-        square.addMouseListener(new fpinMouse(this.curRowInBB,this.curColInBB) {});
+        square.addMouseListener(new fpinMouse(this) {});
     }
 
     public JPanel getSquare() {
           square.setBorder(new LineBorder(color, 3));
         return square;
     }
-
+    public void clicked()
+    {
+        if(this.yard.dragSystem.haveComponent)
+        {
+            Component c=this.yard.dragSystem.currentComponent;
+            if(c instanceof Wire)
+            {
+                if(this.yard.dragSystem.x1==-1)
+                {
+                    //feqy please do connectevity staff between this FPin and c wire pins
+                    ((Wire) c).drawFirstPin(this.rowLocInPanel, this.colLocInPanel, this.curRowInBB, this.curColInBB);
+                    this.yard.dragSystem.x1=this.colLocInPanel;
+                    this.yard.dragSystem.y1=this.rowLocInPanel;
+                }
+                else 
+                {
+                     //feqy please do connectevity staff between this FPin and c wire pins
+                    ((Wire) c).drawSecPin(this.rowLocInPanel, this.colLocInPanel, this.curRowInBB, this.curColInBB);
+                    this.yard.dragSystem.x2=this.colLocInPanel;
+                    this.yard.dragSystem.y2=this.rowLocInPanel;
+                    this.yard.dragSystem.clean();
+                     this.yard.itemselected.setText(" ");
+          
+                }  
+            }
+        }
+        else 
+        {
+            this.yard.dragSystem.clean();
+            this.yard.itemselected.setText(" ");
+            
+        }
+    }
     
 
     public int getCurRowInBB() {
@@ -92,16 +127,14 @@ public class FPin {
 //this class found to react with class
 class fpinMouse extends MouseAdapter
 {
-    int curr;
-    int curc;
-    public fpinMouse(int r,int c)
+   FPin parent ;
+    public fpinMouse(FPin parent )
     {
-        this.curr=r;
-        this.curc=c;
+        this.parent=parent;
     }
      @Override
            public void mouseReleased(MouseEvent e) {
-               System.out.println(this.curr+" "+this.curc);
+               this.parent.clicked();
         // do something
          }
 }

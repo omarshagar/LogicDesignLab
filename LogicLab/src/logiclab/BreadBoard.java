@@ -45,13 +45,15 @@ public class BreadBoard {
     private int frameLength;
     private final int squarelen = 10;
     JPanel frame;
+    private Yard yard;
 
-    public BreadBoard(int numOfCols, int numOfRows, JPanel mainFrame) {
+    public BreadBoard(int numOfCols, int numOfRows, JPanel mainFrame,Yard yard) {
         this.numOfCols = numOfCols;
         this.numOfRows = numOfRows;
         pins = new FPin[numOfRows + 4][numOfCols];
         calcWL();
         this.frame = mainFrame;
+        this.yard=yard;
 
     }
 
@@ -63,51 +65,51 @@ public class BreadBoard {
 
     //this function is to inital all fpins and draw it
     public void drawPins(Yard d) {
-        int x = 10, y = 10;
+        int x = distanceBetweenCols, y = distanceBetweenRows;
         int row = 0;
         for (row = 0; row < 2; row++) {
-            x = 10;
+            x = distanceBetweenCols;
             for (int j = 0; j < numOfCols; j++) {
 
-                pins[row][j] = new FPin(row, j, x, y, this);
+                pins[row][j] = new FPin(row, j, x, y, this,this.yard);
                 if (row == 1) {
                     pins[row][j].color = Color.BLACK;
                 }
                 d.getMainFrame().add(pins[row][j].getSquare());
-                x += 20;
+                x += 2*distanceBetweenCols;
             }
-            y += 20;
+            y += 2*distanceBetweenRows;
         }
         for (int ii = 0; ii < 6; ii++) {
-            y += 10;
+            y += distanceBetweenRows;
             int rr=row+5;
             for (; row <rr; row++) {
-                x = 10;
+                x = distanceBetweenCols;
                 for (int j = 0; j < numOfCols; j++) {
-                    pins[row][j] = new FPin(row, j, x, y, this);
+                    pins[row][j] = new FPin(row, j, x, y, this,this.yard);
                     pins[row][j].color = Color.BLUE;
                     d.getMainFrame().add(pins[row][j].getSquare());
-                    x += 20;
+                    x += 2*distanceBetweenCols;
                 }
-                y += 20;
+                y += 2*distanceBetweenRows;
             }
         }
-        y+=10;
+        y+=distanceBetweenRows;
         int rr=row+2;
         for (; row < rr; row++) {
-            x = 10;
+            x = distanceBetweenCols;
             for (int j = 0; j < numOfCols; j++) {
 
-                pins[row][j] = new FPin(row, j, x, y, this);
+                pins[row][j] = new FPin(row, j, x, y, this,this.yard);
                 if (row == 32) {
                     pins[row][j].color = Color.BLACK;
                 }
                 d.getMainFrame().add(pins[row][j].getSquare());
-                x += 20;
+                x += 2*distanceBetweenCols;
             }
-            y += 20;
+            y += 2*distanceBetweenRows;
         }
-
+            
     }
 
     public int getNumOfCols() {

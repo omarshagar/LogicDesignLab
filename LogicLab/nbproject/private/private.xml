@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/LogicLab.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/FPin.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Component.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/BreadBoard.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Yard.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Pin.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/PinObservee.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/PinObserver.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Wire.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/DragSystem.java</file>
         </group>
     </open-files>
 </project-private>
