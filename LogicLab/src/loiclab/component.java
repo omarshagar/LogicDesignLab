@@ -13,5 +13,6 @@ package loiclab;
  */
 public interface component {
     public void pinchanged(int x,int y);
+     
     
 }

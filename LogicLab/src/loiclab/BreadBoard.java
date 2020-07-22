@@ -7,7 +7,7 @@ package loiclab;
  */
 
 
-import com.sun.prism.image.ViewPort;
+//import com.sun.prism.image.ViewPort;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
