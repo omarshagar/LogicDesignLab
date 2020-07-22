@@ -26,7 +26,7 @@ public class Zero extends InputWithMPin{
     f.setLocationRelativeTo(null);
     f.setTitle("Zero");
     f.setResizable(false);
-   this.draw(5,4);
+      this.draw(5,4);
     }
   public int  draw(int x,int y)
   {
@@ -39,6 +39,6 @@ public class Zero extends InputWithMPin{
     b.setIcon(ii);
     jp.add(b);
     f.add(jp);          
-  return 1;
+  return 0;
   } 
 }

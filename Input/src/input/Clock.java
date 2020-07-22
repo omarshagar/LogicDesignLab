@@ -9,6 +9,6 @@ package input;
  *
  * @author omerh
  */
-public class Clock {
+public class Clock extends InputWithMPin {
     
 }
