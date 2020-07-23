@@ -222,36 +222,71 @@ public class Yard extends JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/or.png"))); // NOI18N
         jLabel16.setText("Or");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel16);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/not.png"))); // NOI18N
         jLabel18.setText("Not");
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel18);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/xor.png"))); // NOI18N
         jLabel19.setText("Xor");
+        jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel19MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel19);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/nand.png"))); // NOI18N
         jLabel20.setText("Nand");
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel20);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/nor.png"))); // NOI18N
         jLabel21.setText("Nor");
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel21);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/xnor.png"))); // NOI18N
         jLabel22.setText("Xnor");
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel22);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/gates/and.png"))); // NOI18N
         jLabel23.setText("And");
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel23);
 
         jScrollPane3.setViewportView(jPanel4);
@@ -430,6 +465,48 @@ public class Yard extends JFrame {
        dragSystem.currentComponent=new BitVisualizer(this.mainBoard,this.MainFrame);
        dragSystem.haveComponent=true;
     }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        itemselected.setText("OR");
+       dragSystem.currentComponent=new OR(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+       itemselected.setText("NOT");
+       dragSystem.currentComponent=new NOT(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
+       itemselected.setText("XOR");
+       dragSystem.currentComponent=new XOR(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel19MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+       itemselected.setText("NAND");
+       dragSystem.currentComponent=new NAND(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        itemselected.setText("NOR");
+       dragSystem.currentComponent=new NOR(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+       itemselected.setText("XNOR");
+       dragSystem.currentComponent=new XNOR(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel22MouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        itemselected.setText("AND");
+       dragSystem.currentComponent=new OR(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel23MouseClicked
 
     /**
      * @param args the command line arguments

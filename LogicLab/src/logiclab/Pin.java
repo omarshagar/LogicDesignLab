@@ -101,5 +101,14 @@ public class Pin implements PinObservee, PinObserver {
         this.value=val;
         notifyObserver();
     }
+    public void changeForGate(int val)
+    {
+        if(val==this.value)return;
+        this.value=0;
+        this.observer.changeForGate(0);
+        this.Upadate(val);
+        this.observer.Upadate(val);
+        this.observer.parent.pinchanged(this.observer.getCurrow(), this.observer.getCurcol());
+    }
     
 }

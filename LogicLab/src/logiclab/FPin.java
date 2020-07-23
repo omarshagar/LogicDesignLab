@@ -127,6 +127,90 @@ public class FPin extends Pin {
                 this.yard.dragSystem.clean();
                 this.yard.itemselected.setText(" ");
             }
+            else if(c instanceof OR)
+            {
+                 try{
+                ((OR) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof AND)
+            {
+                 try{
+                ((AND) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof XOR)
+            {
+                 try{
+                ((XOR) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof NOT)
+            {
+                 try{
+                ((NOT) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof NOR)
+            {
+                 try{
+                ((NOR) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof NAND)
+            {
+                 try{
+                ((NAND) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof XNOR)
+            {
+                 try{
+                ((XNOR) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
         }
         else 
         {
