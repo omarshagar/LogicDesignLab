@@ -211,6 +211,32 @@ public class FPin extends Pin {
                 this.yard.dragSystem.clean();
                 this.yard.itemselected.setText(" ");
             }
+            else if(c instanceof Decoder)
+            {
+                 try{
+                ((Decoder) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof Multiplexer)
+            {
+                 try{
+                ((Multiplexer) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            
+            
         }
         else 
         {

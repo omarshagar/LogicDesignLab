@@ -28,9 +28,7 @@ public class NOT extends Gate{
             //fourth gate
             gatePins[0][6].changeForGate(gateLogic(gatePins[0][5].getValue(), 0));
             gatePins[0][4].changeForGate(gateLogic(gatePins[0][3].getValue(), 0));
-            gatePins[0][2].changeForGate(gateLogic(gatePins[0][1].getValue(), 0));
-            
-            
+            gatePins[0][2].changeForGate(gateLogic(gatePins[0][1].getValue(), 0));   
         }
     }
     
