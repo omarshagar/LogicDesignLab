@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package Gates;
-import loiclab.Pin;
-import loiclab.component;
+import logiclab.Pin;
+import logiclab.component;
 
 /**
  *

@@ -5,7 +5,7 @@
  */
 package Gates;
 
-import loiclab.Pin;
+import logiclab.Pin;
 
 /**
  *

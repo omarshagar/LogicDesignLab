@@ -5,8 +5,8 @@
  */
 package Gates;
 
-import loiclab.Pin;
-import loiclab.component;
+import logiclab.Pin;
+import logiclab.component;
 /**
  *
  * @author el-feky
