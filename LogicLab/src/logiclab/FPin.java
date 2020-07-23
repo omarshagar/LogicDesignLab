@@ -103,6 +103,30 @@ public class FPin extends Pin {
                 this.yard.dragSystem.clean();
                 this.yard.itemselected.setText(" ");
             }
+            else if(c instanceof Led)
+            {
+                try{
+                ((Led) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof BitVisualizer)
+            {
+                 try{
+                ((BitVisualizer) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
         }
         else 
         {

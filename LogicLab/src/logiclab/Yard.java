@@ -55,11 +55,8 @@ public class Yard extends JFrame {
         this.jLabel10.setVisible(false);
         this.jLabel11.setVisible(false);
         this.jLabel12.setVisible(false);
-        
-        
-      // test();
-        
-
+        this.jLabel14.setVisible(false);
+        this.jLabel17.setVisible(false);
     }
     public void test ()
     {
@@ -192,6 +189,11 @@ public class Yard extends JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/output.png"))); // NOI18N
         jLabel13.setText("OutPut");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
         jPanel3.add(jLabel13);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/rgbled.png"))); // NOI18N
@@ -200,6 +202,11 @@ public class Yard extends JFrame {
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/varibleled.png"))); // NOI18N
         jLabel15.setText("VariableLed");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         jPanel3.add(jLabel15);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/digital led.png"))); // NOI18N
@@ -412,6 +419,18 @@ public class Yard extends JFrame {
        dragSystem.haveComponent=true;
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        itemselected.setText("Led");
+       dragSystem.currentComponent=new Led(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        itemselected.setText("BitVisualizer");
+       dragSystem.currentComponent=new BitVisualizer(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel13MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -494,35 +513,3 @@ public class Yard extends JFrame {
 }
 
 
-/*class DrawRect extends JPanel  {
-   private  int RECT_X = 20;
-   private  int RECT_Y = RECT_X;
-   private  int RECT_WIDTH = 100;
-   private  int  RECT_HEIGHT = RECT_WIDTH;
-   
-   public DrawRect(int x,int y,int width,int hight)
-   {
-       this.RECT_X=x;
-       this.RECT_Y=y;
-       this.RECT_HEIGHT=hight;
-       this.RECT_WIDTH=width;
-      
-       repaint();
-   }
-  /* @Override
-   protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
-       paint(g);
-      
-   }
-   public void paint(Graphics g)
-   {
-        // draw the rectangle here
-        // g.setColor(Color.RED);
-       // g.fillRect(RECT_X,RECT_Y,RECT_WIDTH,RECT_HEIGHT);
-        g.setColor(Color.BLACK);
-        g.drawRect(RECT_X,RECT_Y,RECT_WIDTH,RECT_HEIGHT);
-        
-   }
-
-}*/

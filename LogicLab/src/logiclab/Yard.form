@@ -229,6 +229,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="OutPut"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel13MouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
@@ -245,6 +248,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="VariableLed"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel15MouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
