@@ -18,10 +18,10 @@ public class Pretest {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         JPanel p=new JPanel();
-        out o=new out(-2,50,100,p);
+        BitVisualizer o=new BitVisualizer(-2,50,100,p);
      //   o.loadImage();
     }
     
