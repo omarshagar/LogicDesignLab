@@ -12,6 +12,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
@@ -239,6 +240,36 @@ public class FPin extends Pin {
             {
                  try{
                 ((Four_Bit_Adder) c).add(this.curRowInBB, this.curColInBB);
+                }
+                catch(IOException e)
+                {
+                    System.out.println("wrong has happend in opining pic");
+                }
+                this.yard.dragSystem.clean();
+                this.yard.itemselected.setText(" ");
+            }
+            else if(c instanceof Clock)
+            {
+                 try{
+                ((Clock) c).add(this.curRowInBB, this.curColInBB);
+                double x=0;
+                boolean valid=false;
+                while(!valid)
+                {
+                    String s=JOptionPane.showInputDialog("please enter your frequancy");
+                    try{
+                    x=(double)Integer.parseInt(s);
+                    valid=true;
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                     
+                        
+                ((Clock) c).setFrequency(x);
+                ((Clock) c).start();
                 }
                 catch(IOException e)
                 {

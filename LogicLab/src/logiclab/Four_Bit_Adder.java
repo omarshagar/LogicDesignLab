@@ -73,7 +73,7 @@ public class Four_Bit_Adder implements component{
                     jp.setVisible(false);
 
                     for (int i = 0; i < 2; i++) {
-                        for (int ii = 0; ii < 8; ii++) {
+                        for (int ii = 0; ii < 9; ii++) {
                            mainBreadBoard.pins[out[i][ii].getObserver().getCurrow()][out[i][ii].getObserver().getCurcol()].square.setVisible(true);
                    out[i][ii].getObserver().delete();
                    out[i][ii].delete();

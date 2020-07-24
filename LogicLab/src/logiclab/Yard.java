@@ -83,6 +83,7 @@ public class Yard extends JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -160,6 +161,14 @@ public class Yard extends JFrame {
         jLabel7.setText("Input");
         jLabel7.setEnabled(false);
         jPanel2.add(jLabel7);
+
+        jLabel25.setText("Clock");
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel25);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Stepper");
@@ -573,6 +582,12 @@ public class Yard extends JFrame {
        dragSystem.haveComponent=true;
     }//GEN-LAST:event_adderMousePressed
 
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+       itemselected.setText("Clock");
+       dragSystem.currentComponent=new Clock(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel25MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -632,6 +647,7 @@ public class Yard extends JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

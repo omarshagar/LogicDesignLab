@@ -4,16 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/FPin.java</file>
-            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Decoder.java</file>
-            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/XNOR.java</file>
-            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Multiplexer.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Four_Bit_Adder.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/xor.png</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Yard.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Gate.java</file>
-            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/XOR.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Pin.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Clock.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/OR.java</file>
             <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/NOT.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Decoder.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/XNOR.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/Multiplexer.java</file>
+            <file>file:/home/omarshagar/CS/2ndYear/2ndTerm/OOP/LogicLabgar/TheProject/LogicLab/src/logiclab/XOR.java</file>
         </group>
     </open-files>
 </project-private>
