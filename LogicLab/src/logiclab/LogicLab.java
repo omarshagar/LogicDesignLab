@@ -64,7 +64,7 @@ public class LogicLab {
         JButton yardBtn=new JButton("Yard");
         
         
-        
+         JButton credits=new JButton("Credits");
         
        
       
@@ -72,7 +72,7 @@ public class LogicLab {
         
         //set settings of buttons 
         yardBtn.setBounds(360,80, 100,50);
-        
+        credits.setBounds(360, 180, 100, 50);
        
         
         //set functions of buttons 
@@ -82,9 +82,16 @@ public class LogicLab {
              
               mainframe.dispose();
                 new ColBradBoard().setVisible(true);
-               
-                
+            }
+        });
+        
+        
+        credits.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
              
+              mainframe.dispose();
+                new Credits().setVisible(true);
             }
         });
      
@@ -95,7 +102,7 @@ public class LogicLab {
        mainframe.setSize(840,680);
        mainframe.setLayout(null);
          mainframe.setResizable(false);
-      
+         mainframe.add(credits);
          mainframe.add(yardBtn);
           mainframe.setVisible(true);
     }
