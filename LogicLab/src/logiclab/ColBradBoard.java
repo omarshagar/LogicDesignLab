@@ -1,9 +1,10 @@
+package logiclab;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logiclab;
+
 
 /**
  *
@@ -34,7 +35,6 @@ public class ColBradBoard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 400));
 
         jButton1.setText("Enter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,16 +111,16 @@ public class ColBradBoard extends javax.swing.JFrame {
        String Text;
        Text=jTextField1.getText();
        int num;
-       try
-       {
+      // try
+       //{
            num=Integer.parseInt(Text);
              this.dispose();
               new Yard(num).setVisible(true);
-       }
-       catch(Exception e)
+    //   }
+     /*  catch(Exception e)
        {
            jLabel1.setText("notvalid data");
-       }
+       }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -148,6 +148,7 @@ public class ColBradBoard extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ColBradBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

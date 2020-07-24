@@ -1,9 +1,10 @@
+package logiclab;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logiclab;
+
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,6 +14,7 @@ import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JApplet;
@@ -28,6 +30,28 @@ public class LogicLab {
 
     
     public static void main(String[] args) {
+       /*Pin pin1,pin2 = null;
+       pin1=new Pin(true,null, 0, null, 0, 0);
+       pin2=new Pin(true,null,0,null,0,0);
+       pin1.addObserver(pin2);
+       pin2.addObserver(pin1);
+       int n;
+       Scanner scn=new Scanner(System.in);
+       n=scn.nextInt();
+       while(n-->0)
+       {
+           int a,b;
+           a=scn.nextInt();
+           b=scn.nextInt();
+           if(a==1)
+           {
+               pin1.Upadate(b);
+           }
+           else pin2.Upadate(b);
+           System.out.println(pin1.value+" "+pin2.value);
+  */
+       
+        
         start();
     }
     
