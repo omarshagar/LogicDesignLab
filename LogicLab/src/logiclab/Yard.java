@@ -111,6 +111,7 @@ public class Yard extends JFrame {
         wire = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         Multiplexer = new javax.swing.JLabel();
+        adder = new javax.swing.JLabel();
         rightPanel = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
@@ -322,6 +323,14 @@ public class Yard extends JFrame {
             }
         });
         jPanel5.add(Multiplexer);
+
+        adder.setText("FullAdder");
+        adder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                adderMousePressed(evt);
+            }
+        });
+        jPanel5.add(adder);
 
         jScrollPane4.setViewportView(jPanel5);
 
@@ -558,6 +567,12 @@ public class Yard extends JFrame {
        dragSystem.haveComponent=true;
     }//GEN-LAST:event_MultiplexerMouseClicked
 
+    private void adderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderMousePressed
+        itemselected.setText("FullAdder");
+       dragSystem.currentComponent=new Four_Bit_Adder(this.mainBoard,this.MainFrame);
+       dragSystem.haveComponent=true;
+    }//GEN-LAST:event_adderMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -598,6 +613,7 @@ public class Yard extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainFrame;
     private javax.swing.JLabel Multiplexer;
+    private javax.swing.JLabel adder;
     public javax.swing.JLabel itemselected;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

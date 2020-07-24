@@ -86,7 +86,7 @@ public abstract class Gate implements component {
             }
         }
         FPin fp = mainBreadBoard.pins[row][col];
-        jp.setBounds(fp.getRowLocInPanel() - 5, fp.getColLocInPanel() - 5, 130, 50);
+        jp.setBounds(fp.getRowLocInPanel() , fp.getColLocInPanel() - 5, 130, 50);
         jp.setVisible(true);
         this.mainframe.add(jp);
 

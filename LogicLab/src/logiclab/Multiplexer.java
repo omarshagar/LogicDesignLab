@@ -77,8 +77,14 @@ public class Multiplexer implements component {
     }
     @Override
     public void pinchanged(int x, int y) {
-        if((x==1&&y==4)||(x==1||y==5))return ;
-        if (gatePins[1][7].getValue() < 0 && gatePins[0][0].getValue() > 0) {
+        if((x==1&&y==4)||(x==1||y==5))
+        {
+           if (gatePins[1][7].getValue() >= 0 || gatePins[0][0].getValue() <= 0||gatePins[1][6].getValue() >= 0) {
+                gatePins[1][4].changeForGate(0);
+        gatePins[1][5].changeForGate(0);
+            }
+        }
+        else if (gatePins[1][7].getValue() < 0 && gatePins[0][0].getValue() > 0) {
             if (gatePins[1][6].getValue() < 0) {
                 boolean A = ConverterToB(gatePins[0][5].getValue()),
                         B = ConverterToB(gatePins[0][6].getValue()), C = ConverterToB(gatePins[0][7].getValue());

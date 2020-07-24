@@ -422,6 +422,14 @@
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MultiplexerMouseClicked"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="adder">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="FullAdder"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adderMousePressed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
