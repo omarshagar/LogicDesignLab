@@ -81,7 +81,7 @@ public class Decoder implements component {
     @Override
     public void pinchanged(int x, int y) {
         if (gatePins[1][7].getValue() < 0 && gatePins[0][0].getValue() > 0/*&&x==1&&(y==0||y==1||y==2)*/) {
-            if (gatePins[1][5].getValue() < 0 && gatePins[1][4].getValue() <0 && gatePins[1][3].getValue() > 0) {
+            if (gatePins[1][5].getValue() > 0 && gatePins[1][4].getValue() <0 && gatePins[1][3].getValue() < 0) {
                 ///////////////////////////
                 int A = gatePins[1][0].getValue(), B = gatePins[1][1].getValue(), C = gatePins[1][2].getValue();
                 
