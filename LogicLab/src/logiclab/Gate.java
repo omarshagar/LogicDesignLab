@@ -38,7 +38,6 @@ public abstract class Gate implements component {
         }
         jp = new JPanel(new GridLayout());
         lab = new JLabel();
-
         setPic();
         jp.add(lab);
 

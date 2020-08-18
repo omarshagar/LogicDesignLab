@@ -77,7 +77,8 @@ public class Pin implements PinObservee, PinObserver {
              this.notifyObserver();
           }
     }
-
+    
+    
     public boolean isHasObserver() {
         return hasObserver;
     }
@@ -96,10 +97,29 @@ public class Pin implements PinObservee, PinObserver {
     public int getCurcol() {
         return curcol;
     }
+    public void Upadate2(int value) {
+       
+        if(this.value==value)
+        {
+            return ;
+        }
+         if(this.value!=value)
+         {   
+            this.value=value;
+             if(parent!=null)
+             parent.pinchanged(currow, curcol);
+             this.notifyObserver();
+          }
+    }
+     public void notifyObserver2() {
+       if(observer!=null)
+       observer.Upadate2(value);
+    }
     public void setvalue(int val)
     {
         this.value=val;
-        notifyObserver();
+        notifyObserver2();
+         this.observer.parent.pinchanged(this.observer.getCurrow(), this.observer.getCurcol());
     }
     public void changeForGate(int val)
     {

@@ -17,8 +17,8 @@ import javax.swing.JPanel;
  * @author omerh
  */
 public class Four_Bit_Adder implements component{
-  private int carry=0;
-  private MPin out[][];
+    private int carry=0;
+    private MPin out[][];
     private JPanel jp;
     private JPanel mainframe;
     private BreadBoard mainBreadBoard;

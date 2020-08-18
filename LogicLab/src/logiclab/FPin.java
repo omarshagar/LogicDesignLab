@@ -52,6 +52,7 @@ public class FPin extends Pin {
           square.setBorder(new LineBorder(color, 3));
         return square;
     }
+    /////make this correct 
     public void clicked() 
     {
         

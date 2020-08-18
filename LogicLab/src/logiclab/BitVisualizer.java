@@ -23,7 +23,7 @@ import javax.swing.JPanel;
  * @author omerh
  */
 public class BitVisualizer implements component{
-   private JPanel jp;
+    private JPanel jp;
     private JPanel mainframe;
     private BreadBoard mainBreadBoard;
      JLabel lab;

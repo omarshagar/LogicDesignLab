@@ -122,23 +122,44 @@ public static int numOfCreatedWires=0;
            {
                return ;
            }
-           
+            if((pin[0].getValue()==-1&&pin[1].getValue()==2)||(pin[0].getValue()==1&&pin[1].getValue()==-2))
+           {
+             
+               pin[1].setvalue(2*pin[0].getValue());
+               return;
+           }
+            if((pin[1].getValue()==-1&&pin[0].getValue()==2)||(pin[1].getValue()==1&&pin[0].getValue()==-2))
+           {
+               pin[0].setvalue(2*pin[1].getValue());
+              
+           }
            else if(pin[1].getValue()>0&&pin[0].getValue()<=0)
            {
                pin[0].Upadate(2);
+               //pin[0].setvalue(2);
+              // pin[0].changeForGate(2);
            }
            else if(pin[0].getValue()>0&&pin[1].getValue()<=0)
            {
                pin[1].Upadate(2);
+                //pin[1].setvalue(2);
+                //pin[0].changeForGate(2);
            }
            else if(pin[1].getValue()<0&&pin[0].getValue()==0)
            {
                pin[0].Upadate(-2);
+                //pin[0].setvalue(-2);
+               // pin[0].changeForGate(-2);
            }   
            else if(pin[0].getValue()<0&&pin[1].getValue()==0)
            {
+                // pin[1].setvalue(-2);
                pin[1].Upadate(-2);
-           }  
+               // pin[1].changeForGate(-2);
+           } 
+           
+           
+          
        }
     @Override
     public void pinchanged(int x, int y) {

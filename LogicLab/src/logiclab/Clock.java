@@ -82,7 +82,7 @@ public class Clock extends Thread  implements component ,Runnable {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Clock.class.getName()).log(Level.SEVERE, null, ex);
             }
-            clockPin.changeForGate(0);
+            clockPin.changeForGate(-2);
           
             try {
                 
