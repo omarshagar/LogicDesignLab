@@ -55,9 +55,10 @@ public class Four_Bit_Adder implements component{
                 mainBreadBoard.pins[row + i][col + ii].square.setVisible(false);
                 out[i][ii].addObserver(mainBreadBoard.pins[i + row][ii + col]);
                 mainBreadBoard.pins[i + row][ii + col].addObserver(out[i][ii]);
+               
             }
         }
-      int num=out[1][8].getValue();
+      int num=get(out[1][8].getValue());
       if(num==1) carry=1;
       else carry=0; 
         FPin fp = mainBreadBoard.pins[row][col];
@@ -86,26 +87,35 @@ public class Four_Bit_Adder implements component{
 
     @Override
     public void pinchanged(int r, int y) {
-int x=0;
-int m=0;
-        if(out[0][5].getValue()<=0||out[0][6].getValue()>0)return ;
+        System.err.printf("%d %d \n", r,y);
+    int x=0;
+    int m=0;
+        if(get(out[0][5].getValue())<=0||get(out[0][6].getValue())>0)return ;
         if((r==0&&y==0)||(r==0&&y==1)||(r==0&&y==2)||(r==0&&y==3)||(r==0&&y==4))return ;
-     while(x<=4)
+        carry=get(out[1][8].getValue());
+        
+     while(x<4)
      {
      int c=0;
-     int che=(out[1][m].getValue()^out[1][m+4].getValue())^carry;
-     out[0][x].changeForGate(che*2);
-     if(out[1][m].getValue()==1) c++;
-     if(out[1][m+4].getValue()==1) c++;
+     int che=(get(out[1][3-m].getValue())^get(out[1][7-m].getValue()))^carry;
+     System.out.printf("%s %d","che",che);
+     out[0][4-m].changeForGate(che*2);
+     if(get(out[1][3-m].getValue())==1) c++;
+     if(get(out[1][7-m].getValue())==1) c++;
      if(carry==1) c++;   
      if(c>=2) carry=1;
      else carry=0;
-      
+     c=0;
      // if(x>0)out[0][m-1].changeForGate(carry*2);
       x++;m++;
-      if(x==4) out[0][4].changeForGate(carry*2);
+      if(x==4) out[0][0].changeForGate(carry*2);
     
      
     }
+    }
+    int get(int val)
+    {
+        if(val==0||val==-1||val==-2)return 0;
+        else return 1;
     }
 }
