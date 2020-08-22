@@ -70,10 +70,10 @@ public class LogicLab {
         
         
         //set settings of buttons 
-        yardBtn.setBounds(360,80, 120,50);
-        playLevelBtn.setBounds(360, 180, 120, 50);
-        addLevelBtn.setBounds(360, 280, 120, 50);
-        credits.setBounds(360, 380, 120, 50);
+        yardBtn.setBounds(360,200, 120,50);
+       // playLevelBtn.setBounds(360, 180, 120, 50);
+        //addLevelBtn.setBounds(360, 280, 120, 50);
+        credits.setBounds(360, 300, 120, 50);
         univPanil.setBounds(20,20,150,150);
         univPanil2.setBounds(670,20,150,150);
         
@@ -118,8 +118,8 @@ public class LogicLab {
          mainframe.setResizable(false);
          mainframe.add(credits);
          mainframe.add(yardBtn);
-         mainframe.add(playLevelBtn);
-         mainframe.add(addLevelBtn);
+        // mainframe.add(playLevelBtn);
+         //mainframe.add(addLevelBtn);
          mainframe.add(univPanil);
          mainframe.add(univPanil2);
          univPanil.setVisible(true);
