@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -28,34 +29,21 @@ import javax.swing.JPanel;
  */
 public class LogicLab {
 
-    
-    public static void main(String[] args) {
-       /*Pin pin1,pin2 = null;
-       pin1=new Pin(true,null, 0, null, 0, 0);
-       pin2=new Pin(true,null,0,null,0,0);
-       pin1.addObserver(pin2);
-       pin2.addObserver(pin1);
-       int n;
-       Scanner scn=new Scanner(System.in);
-       n=scn.nextInt();
-       while(n-->0)
-       {
-           int a,b;
-           a=scn.nextInt();
-           b=scn.nextInt();
-           if(a==1)
-           {
-               pin1.Upadate(b);
-           }
-           else pin2.Upadate(b);
-           System.out.println(pin1.value+" "+pin2.value);
-  */
-       
+    public static JLabel j1=new JLabel();
+    public static JLabel j2=new JLabel();
+   
+
+    public LogicLab() {
+        j1.setIcon(new javax.swing.ImageIcon(getClass().getResource("../images/ain.png")));
+        j2.setIcon(new javax.swing.ImageIcon(getClass().getResource("../images/ain2.jpg"))); 
         
-        start();
     }
     
-    public static void start()
+    public static void main(String[] args) {
+       start();
+    }
+    
+    public static  void start()
     {
         //declaring the main frame of the main window
         JFrame mainframe=new JFrame("LogicSimulator");
@@ -64,16 +52,30 @@ public class LogicLab {
         JButton yardBtn=new JButton("Yard");
         
         
-         JButton credits=new JButton("Credits");
+        JButton addLevelBtn=new JButton("AddLevel");
         
+        JButton playLevelBtn=new JButton("PlayLevel");
+        
+         JButton credits=new JButton("Credits");
+        JPanel univPanil=new JPanel(new GridLayout());
+         JPanel univPanil2=new JPanel(new GridLayout());
+         LogicLab h=new LogicLab();
+         univPanil.add(LogicLab.j1);
+          univPanil2.add(LogicLab.j2);
+         
+         
+         
        
       
         
         
         //set settings of buttons 
-        yardBtn.setBounds(360,80, 100,50);
-        credits.setBounds(360, 180, 100, 50);
-       
+        yardBtn.setBounds(360,80, 120,50);
+        playLevelBtn.setBounds(360, 180, 120, 50);
+        addLevelBtn.setBounds(360, 280, 120, 50);
+        credits.setBounds(360, 380, 120, 50);
+        univPanil.setBounds(20,20,150,150);
+        univPanil2.setBounds(670,20,150,150);
         
         //set functions of buttons 
         yardBtn.addActionListener(new ActionListener() {
@@ -84,7 +86,19 @@ public class LogicLab {
                 new ColBradBoard().setVisible(true);
             }
         });
+        playLevelBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
         
+        addLevelBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
         
         credits.addActionListener(new ActionListener() {
             @Override
@@ -104,6 +118,11 @@ public class LogicLab {
          mainframe.setResizable(false);
          mainframe.add(credits);
          mainframe.add(yardBtn);
+         mainframe.add(playLevelBtn);
+         mainframe.add(addLevelBtn);
+         mainframe.add(univPanil);
+         mainframe.add(univPanil2);
+         univPanil.setVisible(true);
           mainframe.setVisible(true);
     }
     

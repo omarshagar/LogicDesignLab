@@ -49,6 +49,7 @@ public class Multiplexer implements component {
         if (row >= 33 || mainBreadBoard.getNumOfCols() - (col + 8) < 0) {
             return;
         }
+        this.mainBreadBoard.getYard().changepic("../images/mux.png");
         for (int i = 0; i < 2; i++) {
             for (int ii = 0; ii < 8; ii++) {
                 mainBreadBoard.pins[row + i][col + ii].square.setVisible(false);

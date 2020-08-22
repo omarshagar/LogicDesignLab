@@ -231,6 +231,13 @@ public class BreadBoard implements component{
             }
         }
     }
+
+    public Yard getYard() {
+        return yard;
+    }
+
+    
+     
     public int getNumOfCols() {
         return numOfCols;
     }

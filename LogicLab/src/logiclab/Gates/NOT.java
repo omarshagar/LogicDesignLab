@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 public class NOT extends Gate{
 
     public NOT(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insidenot.jpg");
     }
     @Override
     public void pinchanged(int currow,int curcol){

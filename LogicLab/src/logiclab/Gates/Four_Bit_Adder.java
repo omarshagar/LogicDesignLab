@@ -54,6 +54,7 @@ public class Four_Bit_Adder implements component{
         if (row >= 33 || mainBreadBoard.getNumOfCols() - (col + 9) < 0) {
             return;
         }
+         this.mainBreadBoard.getYard().changepic("../images/insideadder.png");
         for (int i = 0; i < 2; i++) {
             for (int ii = 0; ii < 9; ii++) {
                 mainBreadBoard.pins[row + i][col + ii].square.setVisible(false);

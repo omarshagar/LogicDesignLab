@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class NAND extends Gate{
 
     public NAND(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insidenand.png");
     }
     
     //check values here

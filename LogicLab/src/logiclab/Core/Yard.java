@@ -27,6 +27,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 import javax.swing.Scrollable;
+import logiclab.Gates.AND;
 import logiclab.Output.BitVisualizer;
 import logiclab.Gates.Clock;
 import logiclab.Gates.Decoder;
@@ -65,18 +66,30 @@ public class Yard extends JFrame {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         mainBoard.drawPins(this);
-        this.jLabel7.setVisible(false);
-        this.jLabel8.setVisible(false);
-        this.jLabel9.setVisible(false);
-        this.jLabel10.setVisible(false);
-        this.jLabel11.setVisible(false);
-        this.jLabel12.setVisible(false);
-        this.jLabel14.setVisible(false);
-        this.jLabel17.setVisible(false);
+       
+       
     }
     public void test ()
     {
         Test t=new Test(this.mainBoard);
+    }
+     public void changepic(String path)
+    {
+        try
+        {
+        this.jPanel7.removeAll();
+        this.jPanel7.setLayout(new GridLayout());
+        JLabel lab=new JLabel();
+        System.out.print(path);
+        lab.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+        
+        this.jPanel7.add(lab);
+        this.jPanel7.setVisible(true);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
     public JPanel getMainFrame() {
         return this.MainFrame;
@@ -98,20 +111,12 @@ public class Yard extends JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
@@ -136,6 +141,7 @@ public class Yard extends JFrame {
         jPanel6 = new javax.swing.JPanel();
         itemselected = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -171,12 +177,6 @@ public class Yard extends JFrame {
         });
         jPanel2.add(jLabel6);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/input/inputt.png"))); // NOI18N
-        jLabel7.setText("Input");
-        jLabel7.setEnabled(false);
-        jPanel2.add(jLabel7);
-
         jLabel25.setText("Clock");
         jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -184,30 +184,6 @@ public class Yard extends JFrame {
             }
         });
         jPanel2.add(jLabel25);
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Stepper");
-        jPanel2.add(jLabel8);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/input/couunter.png"))); // NOI18N
-        jLabel9.setText("Counter");
-        jPanel2.add(jLabel9);
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/input/constval.png"))); // NOI18N
-        jLabel10.setText("ConstantVal");
-        jPanel2.add(jLabel10);
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/input/bu.png"))); // NOI18N
-        jLabel11.setText("Button");
-        jPanel2.add(jLabel11);
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/input/random.png"))); // NOI18N
-        jLabel12.setText("Random");
-        jPanel2.add(jLabel12);
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -225,10 +201,6 @@ public class Yard extends JFrame {
         });
         jPanel3.add(jLabel13);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/rgbled.png"))); // NOI18N
-        jLabel14.setText("RGBLed");
-        jPanel3.add(jLabel14);
-
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/varibleled.png"))); // NOI18N
         jLabel15.setText("VariableLed");
         jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,10 +209,6 @@ public class Yard extends JFrame {
             }
         });
         jPanel3.add(jLabel15);
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logiclab/images/output/digital led.png"))); // NOI18N
-        jLabel17.setText("DigitalLed");
-        jPanel3.add(jLabel17);
 
         jScrollPane2.setViewportView(jPanel3);
 
@@ -372,7 +340,7 @@ public class Yard extends JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
@@ -427,7 +395,7 @@ public class Yard extends JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(itemselected, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 100, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,6 +412,17 @@ public class Yard extends JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 385, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -454,19 +433,22 @@ public class Yard extends JFrame {
                         .addComponent(MainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 451, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MainFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(516, Short.MAX_VALUE))
@@ -506,12 +488,6 @@ public class Yard extends JFrame {
         dragSystem.currentComponent = new Wire(MainFrame, mainBoard);
         dragSystem.haveComponent = true;
     }//GEN-LAST:event_wireMouseClicked
-    //this function works to sve the last component i saved
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-       itemselected.setText("ground");
-       dragSystem.currentComponent=new Ground(this.mainBoard,this.MainFrame);
-       dragSystem.haveComponent=true;
-    }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel5KeyPressed
        
@@ -573,7 +549,7 @@ public class Yard extends JFrame {
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         itemselected.setText("AND");
-       dragSystem.currentComponent=new OR(this.mainBoard,this.MainFrame);
+       dragSystem.currentComponent=new AND(this.mainBoard,this.MainFrame);
        dragSystem.haveComponent=true;
     }//GEN-LAST:event_jLabel23MouseClicked
 
@@ -606,6 +582,13 @@ public class Yard extends JFrame {
         String arr[]=new String[0];
         LogicLab.main(arr);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    //this function works to sve the last component i saved
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        itemselected.setText("ground");
+        dragSystem.currentComponent=new Ground(this.mainBoard,this.MainFrame);
+        dragSystem.haveComponent=true;
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -651,14 +634,9 @@ public class Yard extends JFrame {
     public javax.swing.JLabel itemselected;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -672,15 +650,13 @@ public class Yard extends JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

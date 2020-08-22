@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class NOR extends Gate{
 
     public NOR(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insidenor.jpg");
     }
     
     //check values here

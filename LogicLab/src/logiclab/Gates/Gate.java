@@ -27,9 +27,11 @@ public abstract class Gate implements component {
     private JPanel jp;
     private JPanel mainframe;
     private BreadBoard mainBreadBoard;
+    private String pathOfDiscImage;
     JLabel lab;
 
-    public Gate(BreadBoard mainBoard, JPanel MainFrame) {
+    public Gate(BreadBoard mainBoard, JPanel MainFrame,String path) {
+        pathOfDiscImage=path;
         this.mainBreadBoard = mainBoard;
         this.mainframe = MainFrame;
         gatePins = new MPin[2][7];
@@ -43,6 +45,7 @@ public abstract class Gate implements component {
         lab = new JLabel();
         setPic();
         jp.add(lab);
+       
 
     }
 
@@ -80,6 +83,7 @@ public abstract class Gate implements component {
         if (row >= 33 || mainBreadBoard.getNumOfCols() - (col + 7) < 0) {
             return;
         }
+         mainBreadBoard.getYard().changepic(pathOfDiscImage);
         for (int i = 0; i < 2; i++) {
             for (int ii = 0; ii < 7; ii++) {
                 mainBreadBoard.pins[row + i][col + ii].square.setVisible(false);
@@ -106,8 +110,16 @@ public abstract class Gate implements component {
                     gatePins[i][ii].delete();
                         }
                     }
-                }
+                }   
             }
+        
         });
+       
+        
+        
+        
     }
+   
+    
+    
 }

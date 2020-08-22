@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package logiclab.Gates;
-
 import logiclab.Core.BreadBoard;
 import javax.swing.JPanel;
-
 /**
  *
  * @author el-feky
@@ -15,9 +13,8 @@ import javax.swing.JPanel;
 public class OR extends Gate{
 
     public OR(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insideor.gif");
     }
-   
     //check values here
     @Override
     public int gateLogic(int val1,int val2){
@@ -28,7 +25,6 @@ public class OR extends Gate{
             return 0;
         }
     }
-
     @Override
     public void setPic() {
        lab.setIcon(new javax.swing.ImageIcon(getClass().getResource("../images/or.png")));

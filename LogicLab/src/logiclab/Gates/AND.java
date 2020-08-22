@@ -14,9 +14,11 @@ import logiclab.Core.component;
  * @author el-feky
  */
 public class AND extends Gate{
+          
 
     public AND(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insideand.jpg" );
+        
     }
     
     //check values here

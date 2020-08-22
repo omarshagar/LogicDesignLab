@@ -16,7 +16,7 @@ import logiclab.Gates.Gate;
 public class XNOR extends Gate{
 
     public XNOR(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insidexnor.jpg");
     }
 
     @Override

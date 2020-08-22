@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 public class XOR extends Gate{
 
     public XOR(BreadBoard mainBoard, JPanel MainFrame) {
-        super(mainBoard, MainFrame);
+        super(mainBoard, MainFrame,"../images/insidexor.jpg");
     }
 
     @Override
